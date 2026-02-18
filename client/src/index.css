@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@theme {
+  --color-kindle-black: #0F1114;
+  --color-kindle-surface: #1A1D23;
+  --color-kindle-card: #22262E;
+  --color-kindle-border: #2E3340;
+  --color-kindle-hover: #333844;
+  --color-amazon-orange: #FF9900;
+  --color-amazon-orange-dark: #E68A00;
+  --color-amazon-teal: #00A8B5;
+  --color-amazon-teal-dark: #008A94;
+  --color-kindle-text: #EAECEF;
+  --color-kindle-muted: #8B919A;
+  --color-kindle-dim: #5A6170;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0F1114;
+  color: #EAECEF;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 72px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(255, 153, 0, 0.3)); }
+  50% { filter: drop-shadow(0 0 14px rgba(255, 153, 0, 0.6)); }
+}
+
+@keyframes streak-pop {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.08); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+.animate-streak-pop {
+  animation: streak-pop 0.5s ease-out forwards;
+}
